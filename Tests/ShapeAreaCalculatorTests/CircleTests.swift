@@ -21,22 +21,12 @@ final class CircleTests: XCTestCase {
     func testCircleWithZeroRadiusArea() {
         let radius: Double = 0
         let expectedArea: Double = 0
-        do {
-            let circle = try Circle(radius: radius)
-            XCTAssertEqual(circle.area(), expectedArea)
-        } catch {
-            XCTFail("Circle object was expected to be created without errors")
-        }
+        XCTAssertEqual(try Circle(radius: radius).area(), expectedArea)
     }
     
     func testCircleWithNonZeroRadiusArea() {
         let radius: Double = 2
         let expectedArea = Double.pi * 4
-        do {
-            let circle = try Circle(radius: radius)
-            XCTAssertEqual(circle.area(), expectedArea)
-        } catch {
-            XCTFail("Circle object was expected to be created without errors")
-        }
+        XCTAssertEqual(try Circle(radius: radius).area(), expectedArea)
     }
 }

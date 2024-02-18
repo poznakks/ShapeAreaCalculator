@@ -4,9 +4,8 @@ public struct Circle: Shape {
     
     private let radius: Double
     
-    // В задании ничего не сказано про проверку правильности фигуры
-    // Например, что радиус должен быть неотрицательным
-    // Решил сделать проверку на это и бросать ошибку в ините
+    /// Initializer either creates an object or throws an error in case of negative radius
+    /// - Parameter radius: Non-negative circle radius
     public init(radius: Double) throws {
         guard radius >= 0 else {
             throw CircleError.negativeRadius
@@ -14,8 +13,9 @@ public struct Circle: Shape {
         self.radius = radius
     }
     
+    // MARK: Shape protocol
     public func area() -> Double {
-        Double.pi * pow(radius, 2)
+        Double.pi * radius * radius
     }
 }
 
