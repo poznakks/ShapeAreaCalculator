@@ -2,9 +2,9 @@ import Foundation
 
 public struct Triangle: Shape {
     
-    public let sideA: Double
-    public let sideB: Double
-    public let sideC: Double
+    private let sideA: Double
+    private let sideB: Double
+    private let sideC: Double
     
     public var isRightAngled: Bool {
         let sides = [sideA, sideB, sideC].sorted()

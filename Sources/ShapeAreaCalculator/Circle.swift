@@ -2,7 +2,7 @@ import Foundation
 
 public struct Circle: Shape {
     
-    public let radius: Double
+    private let radius: Double
     
     // В задании ничего не сказано про проверку правильности фигуры
     // Например, что радиус должен быть неотрицательным
